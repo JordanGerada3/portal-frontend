@@ -49,11 +49,7 @@ import {
 import { Box } from '@mui/material'
 import { useState } from 'react'
 
-export default function AddAppUserRoles({
-  subscriptionId,
-}: {
-  subscriptionId: string
-}) {
+export default function AddAppUserRoles() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const { appId } = useParams()
@@ -70,7 +66,6 @@ export default function AddAppUserRoles({
       const data: UserRoleRequest = {
         appId,
         companyUserId: user,
-        subscriptionId,
         body: roles,
       }
       dispatch(setRolesToAdd([]))
